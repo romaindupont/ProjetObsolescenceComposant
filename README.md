@@ -7,10 +7,11 @@ Développer dans le but de retirer des informations régulières sur le sites de
 
 ### Requirements
 
-You must have this dependencies to start the project : 
+Pour lancer le projet vous devez avoir les dépendances suivantes : 
 
 - Node > 10.x version
 - Yarn >= 1.21.3 version
+- Express
 
 ### Installation
 
@@ -28,9 +29,10 @@ Lancer le back en lançant node index.js depuis le dossier back.
 ## Made with
 
 • Javascript Vanilla
-• Projet webpack créé par moi-même
+• Projet Webpack réalisé par moi-même
 • ExpressJS
 • NodeJs
+• puppeteer
 
 ## Authors
 
