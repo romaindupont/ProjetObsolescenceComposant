@@ -4,11 +4,20 @@ $font-color: lch(53 105 40);
 html {
   font-size: $font-size;
   color: $font-color;
+  font-family: 'Encode Sans SC', sans-serif;
 }
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#root {
+  text-align: center;
+  color: black;
+  overflow-y: scroll;
+  height: 100vh;
+  border: none;
 }
 
 #recherche {
@@ -28,4 +37,33 @@ form {
   font-weight: 900;
   text-decoration: none;
   background: white;
+  outline: none;
+  &:hover {
+    background:black;
+    color: white;
+    border: 5px solid wheat;
+  }
+}
+
+#recherche:hover {
+  border: 3px solid red;
+}
+
+#recherche:focus {
+  border: 3px solid blue;
+  outline: none !important;
+
+
+}
+/* #recherche::selection { 
+  background: transparent; 
+} */
+img {
+  width: 20%;
+}
+
+div {
+  border: 3px solid black;
+  margin: 3rem;
+  padding: 1.5rem;
 }
