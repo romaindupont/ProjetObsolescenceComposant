@@ -189,7 +189,17 @@ const getData6 = async (research) => {
   })
   const pages = await browser.newPage();
   await pages.goto(`${result1}`);
-  await pages.waitForSelector('body > section.product_top.container-fluid > div > div.col-md-6.col-sm-12.center-section > h1');
+  try {
+    await pages.waitForSelector('body > section.product_top.container-fluid > div > div.col-md-6.col-sm-12.center-section > h1', {timeout: 3000});
+    
+  } catch (error) {
+    if (error) {
+      microchipTitle = null;
+      microchip = null;
+      browser.close();
+      return { microchipTitle, microchip }
+    }
+  }
   const result = await pages.evaluate(() => {
     let microchipTitle = document.querySelector('body > section.product_top.container-fluid > div > div.col-md-6.col-sm-12.center-section > h1').innerText;
     let microchip = document.querySelector('body > section.product_top.container-fluid > div > div.col-md-6.col-sm-12.center-section > p').innerText;
