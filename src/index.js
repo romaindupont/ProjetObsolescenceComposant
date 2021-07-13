@@ -75,9 +75,10 @@ const app = {
         const root = document.querySelector('#root');
         const patience = document.querySelector('svg');
         patience.style.display='none';
-       /*  root.removeChild(patience); */
         const percent = document.querySelector('.percent');
         percent.style.display='none';
+        const percentSpan = document.querySelector('.percent > span');
+        percentSpan.textContent=0;
         const div = document.createElement('div');
         div.className = "texas";
         root.append(div);
