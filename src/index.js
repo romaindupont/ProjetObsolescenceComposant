@@ -4,10 +4,27 @@ const app = {
   init: function() {
     app.initElements();
     app.handleFormSubmit();
+    app.waitingSvg();
   },
   initElements: function() {
     const formElement = document.querySelector('form');
     formElement.addEventListener('submit',app.handleFormSubmit);
+  },
+  numberChange:function(number) {
+    const percent = document.querySelector('.percent > span');
+    percent.textContent = number;
+  },
+  waitingSvg:function() {
+    const patience = document.querySelector('svg');
+    patience.style.display = 'block';
+    const percent = document.querySelector('.percent');
+    percent.style.display = 'block';
+    const array = [0,25,50,75, 100]
+    let delay = 7000
+    for (let i=0; i < array.length;i++) {
+      setTimeout(app.numberChange, delay, array[i]);
+      delay += 7000
+    }
   },
   handleFormSubmit:function(event) {
     event.preventDefault();
@@ -28,10 +45,8 @@ const app = {
       let supprimerMicrochip = document.querySelector('.microchip');
       root.removeChild(supprimerMicrochip);
     }
-    let patience = document.createElement('h1');
-    patience.className = "patience";
-    patience.textContent = "Patientez....";
-    root.append(patience);
+
+    app.waitingSvg()
 
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");  
@@ -58,8 +73,11 @@ const app = {
       )
       .then(data => { 
         const root = document.querySelector('#root');
-        const patience = document.querySelector('.patience');
-        root.removeChild(patience);
+        const patience = document.querySelector('svg');
+        patience.style.display='none';
+       /*  root.removeChild(patience); */
+        const percent = document.querySelector('.percent');
+        percent.style.display='none';
         const div = document.createElement('div');
         div.className = "texas";
         root.append(div);

@@ -67,3 +67,28 @@ div {
   margin: 3rem;
   padding: 1.5rem;
 }
+
+.circle {
+  stroke-dasharray: 10000;
+  stroke-dashoffset: 10000;
+  animation: dash 5s linear forwards infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+svg {
+  margin: 0 auto;
+  display: none;
+}
+
+.percent {
+  display: none;
+  position: absolute;
+  top: 175px;
+  left: 415px;
+  border: none;
+}
