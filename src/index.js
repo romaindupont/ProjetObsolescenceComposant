@@ -11,13 +11,13 @@ const app = {
     formElement.addEventListener('submit',app.handleFormSubmit);
   },
   numberChange:function(number) {
-    const percent = document.querySelector('.percent > span');
+    const percent = document.querySelector('.textChange');
     percent.textContent = number;
   },
   waitingSvg:function() {
     const patience = document.querySelector('svg');
     patience.style.display = 'block';
-    const percent = document.querySelector('.percent');
+    const percent = document.querySelector('.textChange');
     percent.style.display = 'block';
     const array = [0,25,50,75, 100]
     let delay = 7000
@@ -75,10 +75,10 @@ const app = {
         const root = document.querySelector('#root');
         const patience = document.querySelector('svg');
         patience.style.display='none';
-        const percent = document.querySelector('.percent');
+        const percent = document.querySelector('.textChange');
         percent.style.display='none';
-        const percentSpan = document.querySelector('.percent > span');
-        percentSpan.textContent=0;
+        /* const percentSpan = document.querySelector('.percent > span'); */
+        percent.textContent=0;
         const div = document.createElement('div');
         div.className = "texas";
         root.append(div);
