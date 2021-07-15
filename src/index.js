@@ -77,7 +77,6 @@ const app = {
         patience.style.display='none';
         const percent = document.querySelector('.textChange');
         percent.style.display='none';
-        /* const percentSpan = document.querySelector('.percent > span'); */
         percent.textContent=0;
         const div = document.createElement('div');
         div.className = "texas";
@@ -135,7 +134,7 @@ const app = {
         root.append(divInf);
         let h1Inf = document.createElement('h1');
         h1Inf.className = "infineonH1";
-        h1Inf.textContent = "ST Micro";
+        h1Inf.textContent = "Infineon";
         divInf.append(h1Inf);
         const infImg = document.createElement('img');
         infImg.src = 'https://www.infineon.com/frontend/release_2021-06-1/dist/resources/img/logo-desktop-en.png';
